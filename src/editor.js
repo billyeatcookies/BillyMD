@@ -12,11 +12,6 @@ require('codemirror/theme/monokai.css');
 class Editor extends Component {
     constructor(props) {
         super(props);
-        this.updateCode = this.updateCode.bind(this);
-    }
-
-    updateCode(e) {
-        this.setState({e});
     }
 
     render() {
@@ -26,7 +21,7 @@ class Editor extends Component {
         }
         return (
             <CodeMirror
-                value={this.props.value} onChange={this.updateCode}
+                value={this.props.value} onChange={this.props.onChange}
                 options={options} height="100%"
             />
         );
