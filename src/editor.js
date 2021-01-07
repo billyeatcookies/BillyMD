@@ -10,28 +10,27 @@ require('codemirror/mode/markdown/markdown');
 require('codemirror/theme/monokai.css');
 
 class Editor extends Component {
-  constructor(props) {
-    super(props);
-
-    this.updateCode = this.updateCode.bind(this);
-  }
-
-	updateCode(e) {
-    this.props.onChange(e);
-	}
-
-  render() {
-    var options = {
-      mode: 'markdown',
-      theme: 'monokai',
+    constructor(props) {
+        super(props);
+        this.updateCode = this.updateCode.bind(this);
     }
-    return (
-      <CodeMirror
-        value={this.props.value} onChange={this.updateCode}
-        options={options} height="100%"
-      />
-    );
-  }
+
+    updateCode(e) {
+        this.setState({e});
+    }
+
+    render() {
+        var options = {
+            mode: 'markdown',
+            theme: 'monokai',
+        }
+        return (
+            <CodeMirror
+                value={this.props.value} onChange={this.updateCode}
+                options={options} height="100%"
+            />
+        );
+    }
 }
 
 export default Editor;
