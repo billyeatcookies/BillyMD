@@ -1,2 +1,2 @@
 # BillyMD
-A simple markdown book.
+A simple markdown live editor.
